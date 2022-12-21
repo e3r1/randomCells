@@ -1,2 +1,2 @@
 echo off
-start LOVE\lovec.exe ..\randomCells
+start LOVE\lovec.exe .
