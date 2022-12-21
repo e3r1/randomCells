@@ -22,7 +22,7 @@ function love.load()
 	btn = Buttons:new("example text", 700, 100, 150, 40)
 	btn.click = 
 	function()
-		print("fine!")
+		createCells(cells)
 	end
 	createCells(cells)
 end
@@ -64,7 +64,6 @@ function love.update(dt)
 	updateCells(cells)
 	month = month % 12 + 1
 
-	updateUI()
 	love.timer.sleep(1 / gameSpeed - dt)
 end
 
@@ -368,3 +367,7 @@ function love.draw()
 	btn:draw()
 end
 
+function love.mousepressed(x, y, button, istouch)
+	params = {x, y, button}
+    updateUI('mouse', params)
+end
