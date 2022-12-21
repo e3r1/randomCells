@@ -75,26 +75,26 @@ function updateCells(cells)
 
 	peacefulScrypt = function(i, j, cells)
 		hunger(i, j, cells)
-				alive = tryLive(i, j, cells)
-				if alive then
-					sate = tryEatGrass(i, j, cells)
-					reprodused = tryReproduce(i, j, cells)
-					if not sate and not reprodused then
-						tryMove(i, j, cells)
-					end
-				end
+		alive = tryLive(i, j, cells)
+		if alive then
+			sate = tryEatGrass(i, j, cells)
+			reprodused = tryReproduce(i, j, cells)
+			if not sate and not reprodused then
+				tryMove(i, j, cells)
+			end
+		end
 	end
 
 	predatorScrypt = function(i, j, cells)
 		hunger(i, j, cells)
-				alive = tryLive(i, j, cells)
-				if alive then
-					sate = tryEatPeaceful(i, j, cells)
-					reprodused = tryReproduce(i, j, cells)
-					if not sate and not reprodused then
-						tryMove(i, j, cells)
-					end
-				end
+		alive = tryLive(i, j, cells)
+		if alive then
+			sate = tryEatPeaceful(i, j, cells)
+			reprodused = tryReproduce(i, j, cells)
+			if not sate and not reprodused then
+				tryMove(i, j, cells)
+			end
+		end
 	end
 
 	grassCells = {}
